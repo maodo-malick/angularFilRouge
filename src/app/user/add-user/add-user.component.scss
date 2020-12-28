@@ -1,0 +1,20 @@
+.circle{
+  height: 80px;
+  width: 80px;
+}
+.circle-outer-border{
+  position: relative;
+  margin-left: 100px;
+  border: #63a4ff solid 1px;
+  border-radius: 80px;
+  -moz-border-radius: 80px;
+  -webkit-border-radius: 80px;
+  overflow: hidden;
+}
+
+.circle-fill{
+  position: absolute;
+  top: 0;
+  left: 50px;
+
+}
