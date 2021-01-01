@@ -1,0 +1,38 @@
+<div fxLayout="row"  fxLayoutAlign="center center">
+
+
+  <mat-card fxFlex="50">
+    <mat-card-title  class="titre"><h1>{{title}}</h1></mat-card-title>
+    <form class="example-form" [formGroup]="myForm" >
+
+             <mat-form-field class="example-full-width" style="margin-top: 20px;" fxFill="full">
+            <mat-label>Libelle</mat-label>
+                 <input matInput placeholder="libelle" >
+             </mat-form-field>
+         <mat-form-field class="example-full-width" fxFill="full">
+              <mat-label>Description</mat-label>
+           <textarea matInput placeholder="description de la competence"></textarea>
+            </mat-form-field>
+               <mat-form-field class="example-chip-list">
+               <mat-label>Competences</mat-label>
+                <mat-chip-list #chipList aria-label="Competence selection" fxFill="full">
+                   <mat-chip *ngFor="let competence of competences" [selectable]="selectable"
+                        [removable]="removable" (removed)="remove(competence)" style="font-size: 12px; display: flex;text-align: center;">
+                 {{competence.libelle}}
+                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                    </mat-chip>
+               <input placeholder="ajouter une competence"
+                           [matChipInputFor]="chipList"
+                           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                           [matChipInputAddOnBlur]="addOnBlur"
+                           (matChipInputTokenEnd)="add($event)">
+                  </mat-chip-list>
+                </mat-form-field>
+              <div fxLayout="row" fxLayoutAlign="end center" >
+                <button mat-stroked-button color="primary">Soumettre</button>
+              </div>
+    </form>
+  </mat-card>
+<!--  </form>-->
+
+</div>

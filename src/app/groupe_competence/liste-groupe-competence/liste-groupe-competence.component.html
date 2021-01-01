@@ -1,0 +1,71 @@
+<!--<div  fxLayout="row" fxLayoutAlign="center center">-->
+
+<!--    <mat-card>-->
+<!--      &lt;!&ndash;<div  fxLayout="column" fxLayoutAlign="center center" >-->
+<!--        <button mat-icon-button >-->
+<!--          <mat-icon style="color: #304ffe;" >person_add</mat-icon>-->
+<!--        </button>-->
+<!--      </div>&ndash;&gt;-->
+<!--    </mat-card>-->
+
+
+<!--</div>-->
+<div fxLayout="row" fxLayoutAlign="center center" >
+  <mat-card fxFlex="70"  style="margin-top: 6%;">
+ <mat-card-title style="text-align: center; hyphenate-limit-zone: 5%; ">{{title}}
+ <button mat-icon-button style="float: right; color: #3f51b5;">
+       <mat-icon>person_add</mat-icon>
+     </button>
+  </mat-card-title>
+
+    <hr>
+ <div>
+   <div class="example-action-buttons ">
+     <button mat-button (click)="accordion.openAll()">Expand All</button>
+     <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+   </div>
+   <div   class="content" fxLayout=" row wrap"  fxLayoutGap=" 20px grid"  style="align-content: center; margin-left: 8%;">
+ <div *ngFor="let groupe of grpecompetence" fxFlex="30%" fxFlex.xs = " 100% " fxFlex.sm = " 35% " fxLayoutGap=" 20px grid"   >
+   <mat-accordion class="example-headers-align" multi>
+     <mat-expansion-panel>
+       <mat-expansion-panel-header>
+         <mat-panel-title>
+          libelle
+         </mat-panel-title>
+         <mat-panel-description>
+<!--           Type your name and age-->
+           <div  fxLayout="row" fxLayoutAlign="end center" style="text-align: center;">
+             <button mat-icon-button>
+               <mat-icon>create</mat-icon>
+             </button>
+             <button mat-icon-button>
+               <mat-icon >clear</mat-icon>
+             </button>
+
+           </div>
+
+         </mat-panel-description>
+       </mat-expansion-panel-header>
+       <mat-card style="background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);" >
+
+         <div>
+           <h3>Description</h3>
+           <textarea rows="5" cols="15" pInputTextarea autoResize="autoResize"></textarea>
+         </div>
+       </mat-card>
+
+     </mat-expansion-panel>
+   </mat-accordion>
+
+
+
+
+      </div>
+
+
+    </div>
+ </div>
+
+  </mat-card>
+
+</div>

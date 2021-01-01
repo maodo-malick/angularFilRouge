@@ -1,0 +1,53 @@
+<div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 8%;">
+<!--  <mat-card-title class="header"  fxFlex="30">  <h2>{{titre}}</h2> </mat-card-title>-->
+<!--  <hr>-->
+  <mat-card fxFlex="60">
+   <mat-card-title class="title" ><h1>{{titre}}</h1></mat-card-title>
+    <hr>
+    <div fxLayout="row" fxLayoutAlign="end center" ><button mat-raised-button color="primary" style=" margin-top: 3%;">+Competence</button></div>
+    <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 5%">
+      <mat-form-field appearance="fill" fxFlex="50">
+        <mat-label>Toppings</mat-label>
+        <mat-select [formControl]="toppings" multiple>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 5%; background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);">
+      <div *ngFor="let tab of tabs" fxFlex="30%" fxFlex.xs = " 100% " fxFlex.sm = " 35% " fxLayoutGap=" 20px grid"   >
+        <mat-accordion class="example-headers-align" multi>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Niveaux
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <mat-card style="background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);" >
+
+              <div>
+                <h3>Description</h3>
+                <textarea rows="5" cols="15" pInputTextarea autoResize="autoResize"></textarea>
+              </div>
+            </mat-card>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+
+
+
+
+      </div>
+<!--      <input class="promoted-search__input" placeholder="Décrivez votre problème" value="" aria-label="Pour découvrir des informations susceptibles de vous aider, veuillez décrire votre problème." autocomplete="off" name="q" spellcheck="false" type="search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" style="outline: none;">-->
+    </div>
+
+
+  </mat-card>
+
+</div>
+
+<!--<mat-card fxFlex="60" style="position: relative;">-->
+<!--  <mat-card-header> <button  mat-raised-button color="primary" >+ Competence</button></mat-card-header>-->
+<!--</mat-card>-->
+<!--<form class="promoted-search__form" action="/chrome/search?hl=fr" id="search-form" role="search"><input class="promoted-search__input" placeholder="Décrivez votre problème" value="" aria-label="Pour découvrir des informations susceptibles de vous aider, veuillez décrire votre problème." autocomplete="off" name="q" spellcheck="false" type="search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" style="outline: none;"><input name="from_promoted_search" type="hidden" value="true"><button class="promoted-search__search-button" aria-label="Rechercher"><svg class="promoted-search__search-icon" viewBox="0 0 24 24"><path d="M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z"></path><path d="M0 0h24v24H0V0z" fill="none"></path></svg></button><button class="promoted-search__clear-button promoted-search__clear-button&#45;&#45;hidden" aria-label="Effacer le contenu du champ de recherche"><svg class="promoted-search__clear-icon" viewBox="0 0 48 48">-->
+<!--  <path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"></path></svg></button></form>-->
