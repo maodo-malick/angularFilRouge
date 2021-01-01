@@ -7,6 +7,7 @@ export interface User
   password: string;
   avatar: any;
   archiver: boolean;
+  $phone: number;
   email: string;
   profile: string;
 }

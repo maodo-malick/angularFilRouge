@@ -1,1 +1,105 @@
-<p>liste-user works!</p>
+<div class="mat-elevation-z8" >
+  <table mat-table [dataSource]="dataSource" style="background-color: #ffffff;
+background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="avatar">
+      <th mat-header-cell *matHeaderCellDef> Avatar</th>
+      <td mat-cell *matCellDef="let element">
+        <img mat-list-avatar src="data:image/png;base64,{{element.avatar}}"  style="width: 50px;height: 50px " alt="">
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef> Nom </th>
+      <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="prenom">
+      <th mat-header-cell *matHeaderCellDef>Prenom</th>
+      <td mat-cell *matCellDef="let element"> {{element.prenom}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+    <ng-container matColumnDef="profile">
+      <th mat-header-cell *matHeaderCellDef>Profile</th>
+      <td mat-cell *matCellDef="let element"> {{element.profile}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element" class="flex-space-between">
+        <button mat-icon-button color="primary" style="margin-right: 30px;">
+                 <mat-icon style="color:#0d47a1 ;" class="mat-10">mode_edit</mat-icon>
+                 Edit</button>
+             <button mat-icon-button>
+                    <mat-icon style="color:#F93154;" class="mat-10">delete</mat-icon>
+                Supprimer </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" ></mat-paginator>
+</div>
+<!--<div class="inline">-->
+
+<!--  <table mat-table [dataSource]="user" class="mat-elevation-z8" style="width: 60%;">-->
+
+<!--    &lt;!&ndash;- Note that these columns can be defined in any order.-->
+<!--          The actual rendered columns are set as a property on the row definition" &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Position Column &ndash;&gt;-->
+<!--    <ng-container matColumnDef="avatar">-->
+<!--      <th mat-header-cell *matHeaderCellDef> Avatar</th>-->
+<!--      <td mat-cell *matCellDef="let element">-->
+
+<!--          <img mat-list-avatar src="{{element.avatar}}"  style="width: 50px; " alt="">-->
+<!--      </td>-->
+<!--    </ng-container>-->
+
+<!--    &lt;!&ndash; Name Column &ndash;&gt;-->
+<!--    <ng-container matColumnDef="nom" >-->
+<!--      <th mat-header-cell *matHeaderCellDef> Nom </th>-->
+<!--      <td mat-cell *matCellDef="let element"> {{element.nom}} </td>-->
+<!--    </ng-container>-->
+
+<!--    &lt;!&ndash; Weight Column &ndash;&gt;-->
+<!--    <ng-container matColumnDef="prenom">-->
+<!--      <th mat-header-cell *matHeaderCellDef> Prenom </th>-->
+<!--      <td mat-cell *matCellDef="let element"> {{element.prenom}} </td>-->
+<!--    </ng-container>-->
+
+<!--    &lt;!&ndash; Symbol Column &ndash;&gt;-->
+<!--    <ng-container matColumnDef="email" >-->
+<!--      <th mat-header-cell *matHeaderCellDef> Email </th>-->
+<!--      <td mat-cell *matCellDef="let element"> {{element.email}} </td>-->
+<!--    </ng-container>-->
+<!--    <ng-container matColumnDef="profile">-->
+<!--      <th mat-header-cell *matHeaderCellDef> Profile </th>-->
+<!--      <td mat-cell *matCellDef="let element"> {{element.profile}} </td>-->
+<!--    </ng-container>-->
+<!--    <ng-container matColumnDef="Action">-->
+<!--      <th mat-header-cell *matHeaderCellDef>  </th>-->
+<!--      <td mat-cell *matCellDef="let element">-->
+<!--        <button mat-icon-button>-->
+<!--          <mat-icon style="color:#abcdef;">mode_edit</mat-icon>-->
+<!--        </button>-->
+<!--        <button mat-icon-button>-->
+<!--          <mat-icon style="color:#F93154;">delete</mat-icon>-->
+<!--        </button>-->
+<!--      </td>-->
+<!--    </ng-container>-->
+
+<!--    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+<!--    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+<!--  </table>-->
+
+<!--</div>-->

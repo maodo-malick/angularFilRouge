@@ -1,6 +1,5 @@
-export  interface  Profile
+export interface  Competence
 {
-  id: number;
   libelle: string;
   archiver: boolean;
 }

@@ -1,91 +1,75 @@
-<mat-toolbar  class="example-toolbar ">
 
-  <button mat-icon-button><img src="/assets/images/academy.png" alt="" style="width:40px;">
-  </button>
+<mat-toolbar  class="example-toolbar ml-5 ml-lg-0">
 
-<div class="row">
-  <div class="icon">
-    <button mat-button mat-icon-button class="example-icon">
-      <span fxLayout="column" class="brief"><mat-icon style="color: white;" class="assignment"> assignment</mat-icon>Brief</span>
+
+<div fxFill fxLayout="row" fxLayoutAlign="space-between center" >
+  <div  class="row"  fxLayout="row" fxLayoutAlign="start center">
+    <button mat-icon-button><img src="/assets/images/academy.png" alt="" style="width:40px;">
     </button>
-  </div>
+      <div class="icon">
+        <button mat-button mat-icon-button class="example-icon">
+          <span fxLayout="column" class="brief"><mat-icon style="color: white;" class="assignment"> assignment</mat-icon>Brief</span>
+        </button>
+      </div>
+        <div class="icon">
+          <button  mat-icon-button class="example-icon"   aria-label="Example icon-button with assignment_returned"><span fxLayout="column" class="Rendus">
+        <mat-icon style="color: white;" class="mat-icon7">assignment_returned</mat-icon>Rendus</span>
+          </button>
+        </div>
+      <div class="icon1">
+        <button mat-icon-button class="example-icon2"><span fxLayout="column" class="explorer">
+        <mat-icon style="color: white;" class="mat-icon6">explore</mat-icon>Explorer</span>
+        </button>
+      </div>
     <div class="icon">
-      <button  mat-icon-button class="example-icon"   aria-label="Example icon-button with assignment_returned"><span fxLayout="column" class="Rendus">
-    <mat-icon style="color: white;" class="mat-icon7">assignment_returned</mat-icon>Rendus</span>
+      <button mat-icon-button class="example-icon"><span fxLayout="column" class="forum">
+        <mat-icon style="color: white;" class="mat-icon1">forum</mat-icon>Forum</span>
       </button>
     </div>
-  <div class="icon1">
-    <button mat-icon-button class="example-icon2"><span fxLayout="column" class="explorer">
-    <mat-icon style="color: white;" class="mat-icon6">explore</mat-icon>Explorer</span>
-    </button>
+    <div class="icon1"  [matMenuTriggerFor]="parametreMenu" >
+      <button mat-icon-button class="example-icon2"><span fxLayout="column" class="parametre">
+        <mat-icon style="color: white;" class="mat-icon3">settings</mat-icon>Paramètre</span>
+      </button>
+      <mat-menu #parametreMenu="matMenu">
+        <button mat-menu-item>Promos</button>
+        <button mat-menu-item>Référentiel</button>
+        <button mat-menu-item [routerLink]="['liste_groupe_competence']">Groupe de CompétenceS</button>
+        <button mat-menu-item [routerLink]="['add_competence']">Compétences</button>
+        <button mat-menu-item>Groupe de Tags</button>
+        <button mat-menu-item [routerLink]="['liste_profile_sortie']">Profile de sortie</button>
+
+      </mat-menu>
+
+    </div>
+    <div class="icon">
+      <button mat-icon-button class="example-icon" mat-icon-button [matMenuTriggerFor]="userMenu"><span fxLayout="column" class="user">
+        <mat-icon style="color: white;" class="mat-icon4">person</mat-icon>User</span>
+      </button>
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item [routerLink]="['liste_user']">Utilisateur</button>
+        <button mat-menu-item [routerLink]="['liste_profile']">Profile</button>
+      </mat-menu>
+    </div>
+    <div class="icon1">
+      <button mat-icon-button class="example-icon2"><span fxLayout="column" class="restore">
+        <mat-icon style="color: white;" class="mat-icon5">restore</mat-icon>Historique </span>
+      </button>
+    </div>
   </div>
-<div class="icon">
-  <button mat-icon-button class="example-icon"><span fxLayout="column" class="forum">
-    <mat-icon style="color: white;" class="mat-icon1">forum</mat-icon>Forum</span>
-  </button>
+  <p-dropdown [options]="promos" [(ngModel)]="selectedPromos" optionLabel="libelle" style="margin-right: 15%;"></p-dropdown>
+  <div>
+    Profile
+  </div>
 </div>
-<div class="icon1"  [matMenuTriggerFor]="parametreMenu" >
-  <button mat-icon-button class="example-icon2"><span fxLayout="column" class="parametre">
-    <mat-icon style="color: white;" class="mat-icon3">settings</mat-icon>Paramètre</span>
-  </button>
-  <mat-menu #parametreMenu="matMenu">
-    <button mat-menu-item>Promos</button>
-    <button mat-menu-item>Référentiel</button>
-    <button mat-menu-item>Groupe de CompétenceS</button>
-    <button mat-menu-item>Compétences</button>
-    <button mat-menu-item>Groupe de Tags</button>
-    <button mat-menu-item>Profile de sortie</button>
-
-  </mat-menu>
-
-</div>
-<div class="icon">
-  <button mat-icon-button class="example-icon" mat-icon-button [matMenuTriggerFor]="userMenu"><span fxLayout="column" class="user">
-    <mat-icon style="color: white;" class="mat-icon4">person</mat-icon>User</span>
-  </button>
-  <mat-menu #userMenu="matMenu">
-    <button mat-menu-item>Utilisateur</button>
-    <button mat-menu-item>Profile</button>
-  </mat-menu>
-</div>
-<div class="icon1">
-  <button mat-icon-button class="example-icon2"><span fxLayout="column" class="restore">
-    <mat-icon style="color: white;" class="mat-icon5">restore</mat-icon>Historique </span>
-  </button>
-</div>
-
-</div>
-
 
 </mat-toolbar>
-<!--  <div class="icon-left">-->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  &lt;!&ndash;  <mat-icon style="color: white;" class="mat-icon2">receipt_long</mat-icon>&ndash;&gt;-->
-<!--  <span fxLayout="column" class="user"><mat-icon style="color: white;" class="mat-icon4">person</mat-icon>User</span>-->
-<!--
-<!--  </div>-->
+<mat-sidenav-container class="example-container" autosize>
 
-<!--<div class="icon-center">-->
-<!--  <mat-form-field appearance="outline" class="mat-selected">-->
-<!--    <mat-label></mat-label>-->
-<!--    <mat-select disableRipple>-->
-<!--      <mat-option value="1">Option 1</mat-option>-->
-<!--      <mat-option value="2">Option 2</mat-option>-->
-<!--      <mat-option value="3">Option 3</mat-option>-->
-<!--    </mat-select>-->
-<!--  </mat-form-field>-->
-<!--</div>-->
-<!--<div class="icon-right">-->
-<!--  <span fxLayout="column" class="profile"> <mat-icon style="color: white;" class="mat-icon8">account_circle</mat-icon>Profile</span>-->
+  <mat-sidenav-content class="align ">
+    <!--    <app-profiles></app-profiles>-->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
-<!--  <div class="example-button-container">-->
-<!--    <button mat-mini-fab color="warn" aria-label="Example icon button with a plus one icon" class="notify"  >-->
-<!--    <mat-icon>plus_one</mat-icon>-->
-<!--    </button>-->
-<!--  </div>-->
-<!--</div>-->
+
 
