@@ -1,9 +1,9 @@
 <div class="container" >
         <mat-card fxFlex="40" style="margin-top: 200px; margin-left: 300px; background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);">
           <mat-card-title > Ajouter un profile</mat-card-title>
-          <form class="example-form">
+          <form class="example-form" [formGroup]="postProfile" (ngSubmit)="AddProfile()">
             <mat-form-field class="example-full-width " style="margin-top: 20px; margin-left: 20px;">
-              <input type="text"
+              <input type="text" formControlName="libelle" [(ngModel)]="profile.libelle"
                      placeholder="Décrire votre libelle"
                      aria-label="Number"
                      matInput

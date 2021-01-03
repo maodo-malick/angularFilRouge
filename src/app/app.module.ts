@@ -23,6 +23,8 @@ import { AddPromosComponent } from './promo/add-promos/add-promos.component';
 import { DropdownModule} from 'primeng/dropdown';
 import {CardModule} from 'primeng/card';
 import {ErrorHelperInterceptor} from './access_database/helper.interceptor';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
+
 
 
 
@@ -41,7 +43,8 @@ import {ErrorHelperInterceptor} from './access_database/helper.interceptor';
     ListeGroupeCompetenceComponent,
     ListeCompetenceComponent,
     AddCompetenceComponent,
-    AddPromosComponent
+    AddPromosComponent,
+    // mdb
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import {ErrorHelperInterceptor} from './access_database/helper.interceptor';
     HttpClientModule,
     FormsModule,
     DropdownModule,
-    CardModule
+    CardModule,
+    MaterialFileInputModule
   ],
   providers: [ ErrorHelperInterceptor],
   bootstrap: [AppComponent]

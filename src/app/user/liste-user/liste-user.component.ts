@@ -17,7 +17,11 @@ import {MatTableDataSource} from '@angular/material/table';
 export class ListeUserComponent implements OnInit {
   constructor( private listeUser: ListeUserService , private httpClient: HttpClient) { }
    user: User[] = [];
-  displayedColumns: string[] = ['avatar', 'nom', 'prenom', 'email', 'profile', 'Action'];
+  defaultElevation = 8;
+  raisedElevation = 8;
+
+  name = 'Angular';
+  displayedColumns: string[] = ['photo', 'lastname', 'firstname', 'email', 'profil', 'Action'];
   public dataSource = new MatTableDataSource<User>();
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
@@ -31,7 +35,7 @@ export class ListeUserComponent implements OnInit {
   {
     this.listeUser.getUser().subscribe( resp => {
        // @ts-ignore
-      console.log(resp);
+     // console.log(resp);
       // @ts-ignore
      // return this.user = data;
       this.dataSource.data = resp as User[];

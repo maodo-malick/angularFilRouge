@@ -1,31 +1,33 @@
-
-<div class="tab"  fxLayout="row" fxLayoutAlign="center center">
-  <div class="button" fxLayout="column"  fxFlexAlign="center">
-    <button mat-icon-button>
-      <mat-icon style="fill: #abcdef" size="44">person_add</mat-icon>
+<div class="button" fxLayout="row"  fxLayoutAlign="center center" style="margin-top: 1%;">
+  <div fxLayout="row" fxLayoutAlign="center center"></div>
+        <h1>{{titre}}</h1>
+  <div  fxLayout="row"  fxLayoutAlign="end center" style="margin-left: 30%; margin-top: 2%; margin-bottom: 5px;">
+    <button mat-raised-button style="background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);" [routerLink]="['/header','add_profile']">
+      <mat-icon  style="color: #3f51b5;">person_add</mat-icon> Ajout Profile
     </button>
   </div>
-<table mat-table [dataSource]="profile" class="mat-elevation-z8" fxFlex="50">
+
+</div>
+      <div   fxLayout="row" fxLayoutAlign="center center">
+
+      <table mat-table [dataSource]="profile" class="mat-elevation-z8" fxFlex="60">
+       <ng-container matColumnDef="libelle">
+        <th mat-header-cell *matHeaderCellDef> Libelle </th>
+          <td mat-cell *matCellDef="let element"> {{element.libelle}} </td>
+       </ng-container>
 
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="libelle">
-    <th mat-header-cell *matHeaderCellDef> Libelle </th>
-    <td mat-cell *matCellDef="let element"> {{element.libelle}} </td>
-  </ng-container>
+        <ng-container matColumnDef="Action" style="margin-left: 20px;">
+          <th mat-header-cell *matHeaderCellDef > </th>
+        <td mat-cell *matCellDef="let element">
+           <button mat-stroked-button color="primary" style="margin-left: 20px; width: 150px;" fxLayoutAlign="center center">Liste {{element.libelle}}</button>
+         </td>
+       </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="Action" style="margin-left: 20px;">
-    <th mat-header-cell *matHeaderCellDef > </th>
-    <td mat-cell *matCellDef="let element">
-      <button mat-stroked-button color="primary" style="margin-left: 20px; width: 150px;" fxLayoutAlign="center center">Liste {{element.libelle}}</button>
-    </td>
-  </ng-container>
-
-  <!-- Weight Column -->
+      <!--  &lt;!&ndash; Weight Column &ndash;&gt;-->
 
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
 </div>

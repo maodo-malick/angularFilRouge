@@ -9,42 +9,23 @@ import {Profile} from '../module-profile';
 })
 export class ListeProfileComponent implements OnInit {
 
-  constructor(  ) {}
+  constructor(private listeProfile: ListeProfileService) {}
 
-  profile: Profile [] = [
-   {
-     id: 1,
-     libelle: 'Admin',
-     archiver: false
-   },
-    {
-      id: 2,
-      libelle: 'Formateur',
-      archiver: false
-    },
-    {
-      id: 3,
-      libelle: 'Cm',
-      archiver: false
-    },
-    {
-      id: 4,
-      libelle: 'Apprenant',
-      archiver: false
-    }
- ];
+  profile: Profile [] = [];
+  titre = 'Liste des Profiles';
   displayedColumns: string[] = ['libelle', 'Action'];
 
   ngOnInit(): void {
-  /*  this.getProfiles();*/
+      this.getProfiles();
   }
   // tslint:disable-next-line:typedef
- /* getProfiles()
+  getProfiles()
   {
     this.listeProfile.getProfile().subscribe(data => {
       // @ts-ignore
       this.profile = data;
+      console.log(data);
     });
-  }*/
+  }
 
 }

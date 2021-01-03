@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-add-profil',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-profil.component.scss']
 })
 export class AddProfilComponent implements OnInit {
+  profile: any = [];
+  postProfile: FormGroup;
 
   constructor() { }
 

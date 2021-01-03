@@ -2,12 +2,12 @@ export interface User
 {
   id: number;
   username: string;
-  nom: string;
-  prenom: string;
+  lastname: string;
+  firstname: string;
   password: string;
-  avatar: any;
-  archiver: boolean;
+  photo: any;
+  archivage: boolean;
   $phone: number;
   email: string;
-  profile: string;
+  profil: string;
 }
