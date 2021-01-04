@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'add_groupe_competence', component: AddGroupeCompetenceComponent},
   { path : 'add_competence', component: AddCompetenceComponent},
   { path : 'liste_profile-sortie', component: ListeProfileSortieComponent},
-  { path: 'addUuser', component : AddUserComponent},
+  { path: 'addUser', component : AddUserComponent},
   { path: 'add_profile', component: AddProfilComponent},
   { path: 'liste_user', component: ListeUserComponent},
   { path: 'liste_groupe_competence', component: ListeGroupeCompetenceComponent},

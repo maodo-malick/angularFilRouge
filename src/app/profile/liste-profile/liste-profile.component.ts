@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ListeProfileService} from '../../access_database/services/liste-profile.service';
-import {Profile} from '../module-profile';
+import {Profil} from '../module-profile';
 
 @Component({
   selector: 'app-liste-profile',
@@ -11,7 +11,7 @@ export class ListeProfileComponent implements OnInit {
 
   constructor(private listeProfile: ListeProfileService) {}
 
-  profile: Profile [] = [];
+  profile: Profil [] = [];
   titre = 'Liste des Profiles';
   displayedColumns: string[] = ['libelle', 'Action'];
 

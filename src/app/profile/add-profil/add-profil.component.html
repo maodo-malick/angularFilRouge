@@ -2,12 +2,12 @@
         <mat-card fxFlex="40" style="margin-top: 200px; margin-left: 300px; background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);">
           <mat-card-title > Ajouter un profile</mat-card-title>
           <form class="example-form" [formGroup]="postProfile" (ngSubmit)="AddProfile()">
-            <mat-form-field class="example-full-width " style="margin-top: 20px; margin-left: 20px;">
-              <input type="text" formControlName="libelle" [(ngModel)]="profile.libelle"
-                     placeholder="Décrire votre libelle"
-                     aria-label="Number"
-                     matInput
-                     >
+            <mat-form-field class="example-full-width " style="margin-top: 20px; margin-left: 20px;" appearance="outline">
+              <input type="text"  formControlName="libelle" [(ngModel)]="profil.libelle" required placeholder="Décrire votre libelle" matInput>
+              <mat-error *ngIf="postProfile.controls.libelle.touched && postProfile.controls.libelle.invalid">
+                <span *ngIf="postProfile.controls.libelle.errors.required">Ce champ est obligatoire.</span>
+                <span *ngIf="postProfile.controls.libelle.errors">Ce champ est invalide.</span>
+              </mat-error>
             </mat-form-field>
             <div class="example-button-row" style="margin-top: 20px;">
               <button mat-stroked-button color="primary" style="float: right;">Add profil</button>
