@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MessageService} from 'primeng/api';
 import {Profil} from '../../profile/module-profile';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
@@ -51,7 +50,8 @@ export class AddUserComponent implements OnInit {
        username: [null, [Validators.required, Validators.minLength(6), Validators.pattern(this.usernameRegex)]],
        password: [null, Validators.required, Validators.minLength(8),  ],
        email: [null, Validators.required, Validators.email],
-       profil: [null , Validators.required, ]
+       profil: [null , Validators.required, ],
+       confirm: [ null, Validators.required]
 
      });
   }

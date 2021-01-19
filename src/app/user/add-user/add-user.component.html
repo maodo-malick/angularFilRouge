@@ -3,7 +3,7 @@
   <mat-card fxFlex="50" style="margin-top: 5% ;background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);" >
     <mat-card-title><h2>{{title}}</h2>
     </mat-card-title>
-    <form [formGroup]="addUsers" (ngSubmit)="addingUser()">
+    <form class="example-form" [formGroup]="addUsers" (ngSubmit)="addingUser()">
       <div  fxLayout = "row" fxLayoutAlign="center center">
         <div class="circle circle-outer-border" style="border: #3f51b5 solid 4px; width:90px; height: 90px;">
           <img mat-card-avatar  [src]="imgURL"  *ngIf="imgURL" style="width: 100%; height: 100%">
@@ -11,45 +11,69 @@
         <span style="color:red;" *ngIf="message">{{message}}</span>
       </div>
       <div fxLayout = "row" fxLayoutAlign="center center" >
-          <input #file type="file" accept='image/*' (change)="preview(file.files)"  formControlName="photo" [(ngModel)]="user.photo">
-          <mat-icon matSuffix color="primary" class="mat-18">folder</mat-icon>
+          <input #file type="file" accept='image/*' (change)="preview(file.files)"   >
+<!--          <mat-icon matSuffix color="primary" class="mat-18">folder</mat-icon>-->
       </div>
       <div fxLayout="row" fxLayoutAlign="space-around center">
             <mat-form-field appearance="outline" style="width: 40%;" >
                  <mat-label>Nom</mat-label>
-                <input matInput placeholder="Nom" formControlName="nom" [(ngModel)]="user.nom">
+                <input matInput placeholder="Nom" formControlName="nom" [(ngModel)]="user.nom" matInput>
+              <mat-error *ngIf="addUsers.controls.nom.touched && addUsers.controls.nom.invalid">
+                <span *ngIf="addUsers.controls.nom.errors.required">Ce champ est obligatoire.</span>
+                <span *ngIf="addUsers.controls.nom.errors">Ce champ est invalide.</span>
+              </mat-error>
               </mat-form-field>
             <mat-form-field appearance="outline"   style="width: 55%;" >
                  <mat-label>Prenom</mat-label>
-                <input matInput placeholder="Prenom" formControlName="prenom" [(ngModel)]="user.prenom">
+                <input matInput placeholder="Prenom" formControlName="prenom" [(ngModel)]="user.prenom" >
+              <mat-error *ngIf="addUsers.controls.prenom.touched && addUsers.controls.prenom.invalid">
+                <span *ngIf="addUsers.controls.prenom.errors.required">Ce champ est obligatoire.</span>
+                <span *ngIf="addUsers.controls.prenom.errors">Ce champ est invalide.</span>
+              </mat-error>
             </mat-form-field>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-around center">
             <mat-form-field appearance="outline" style="width: 40%;" >
                  <mat-label>Usermane</mat-label>
-                <input matInput placeholder="username" type="text" formControlName="username" [(ngModel)]="user.username">
+                <input matInput placeholder="username" type="text" formControlName="username" [(ngModel)]="user.username" matInput>
+              <mat-error *ngIf="addUsers.controls.username.touched && addUsers.controls.username.invalid">
+                <span *ngIf="addUsers.controls.username.errors.required">Ce champ est obligatoire.</span>
+                <span *ngIf="addUsers.controls.username.errors">Ce champ est invalide.</span>
+              </mat-error>
               </mat-form-field>
             <mat-form-field appearance="outline"   style="width: 55%;" >
                  <mat-label>Password</mat-label>
                 <input matInput placeholder="Password" type="password" formControlName="password" [(ngModel)]="user.password">
+              <mat-error *ngIf="addUsers.controls.password.touched && addUsers.controls.password.invalid">
+                <span *ngIf="addUsers.controls.password.errors.required">Ce champ est obligatoire.</span>
+                <span *ngIf="addUsers.controls.password.errors">Ce champ est invalide.</span>
+              </mat-error>
             </mat-form-field>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-around center">
             <mat-form-field appearance="outline" style="width: 40%;" >
                  <mat-label>Email</mat-label>
                 <input matInput placeholder="Adresse Email" type="email" formControlName="email" [(ngModel)]="user.email">
+              <mat-error *ngIf="addUsers.controls.email.touched && addUsers.controls.email.invalid">
+                <span *ngIf="addUsers.controls.email.errors.required">Ce champ est obligatoire.</span>
+                <span *ngIf="addUsers.controls.email.errors">Ce champ est invalide.</span>
+              </mat-error>
               </mat-form-field>
             <mat-form-field appearance="outline"   style="width: 55%;" >
                  <mat-label>Comfirm Password</mat-label>
                 <input matInput placeholder="Confirmer" type="password" formControlName="confirm">
+              <mat-error *ngIf="addUsers.controls.confirm.touched && addUsers.controls.confirm.invalid">
+<!--                <span *ngIf="addUsers.controls.confirm.errors.required">Ce champ est obligatoire.</span>-->
+                <span *ngIf="addUsers.controls.confirm.value != addUsers.controls.password.value">Votre confirmation n'es pas bonne.</span>
+              </mat-error>
             </mat-form-field>
 
       </div>
       <div fxLayout="row" fxLayoutAlign=" center center">
         <mat-form-field appearance="outline" style="width: 100%">
           <mat-label>Profile</mat-label>
-          <mat-select *ngFor="let profil of profils" formControlName="profil" [(ngModel)]="user.profil">
-            <mat-option value="1">{{profil.libelle}}</mat-option>
+          <mat-select *ngFor="let profil of profils" formControlName="profil" [(ngModel)]="user.profil"  matInput>
+            <mat-option value="${{profil.libelle}}">{{profil.libelle}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
