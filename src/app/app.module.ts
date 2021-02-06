@@ -24,6 +24,8 @@ import { DropdownModule} from 'primeng/dropdown';
 import {CardModule} from 'primeng/card';
 import {ErrorHelperInterceptor} from './access_database/helper.interceptor';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { ListPromosComponent } from './promo/list-promos/list-promos.component';
+import { ListReferentielComponent } from './rerentiel/list-referentiel/list-referentiel.component';
 
 
 
@@ -44,6 +46,8 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     ListeCompetenceComponent,
     AddCompetenceComponent,
     AddPromosComponent,
+    ListPromosComponent,
+    ListReferentielComponent,
     // mdb
   ],
   imports: [

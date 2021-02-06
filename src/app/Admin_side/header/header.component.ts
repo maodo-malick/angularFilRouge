@@ -7,11 +7,7 @@ import {Promos} from '../../promo/model.promos';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
- promos: Promos [] = [
-   {libelle: 'SA Cohorte1', archiver: false},
-   {libelle: 'SA Cohorte2', archiver: false},
-   {libelle: 'SA Cohorte 3', archiver: false},
- ];
+ promos: Promos [] = [];
   selectedPromos: Promos[];
   constructor() { }
 

@@ -11,6 +11,9 @@ import {AddGroupeCompetenceComponent} from './groupe_competence/add-groupe-compe
 import {ListeGroupeCompetenceComponent} from './groupe_competence/liste-groupe-competence/liste-groupe-competence.component';
 import {AddCompetenceComponent} from './competence/add-competence/add-competence.component';
 import {ListeCompetenceComponent} from './competence/liste-competence/liste-competence.component';
+import {ListPromosComponent} from './promo/list-promos/list-promos.component';
+import {ListReferentielComponent} from './rerentiel/list-referentiel/list-referentiel.component';
+import {AddPromosComponent} from './promo/add-promos/add-promos.component';
 
 
 const routes: Routes = [
@@ -24,6 +27,9 @@ const routes: Routes = [
       { path : 'liste_competence' , component: ListeCompetenceComponent},
       { path : 'add_competence' , component: AddCompetenceComponent},
       { path : 'addUser' , component: AddUserComponent},
+      {path : 'list-promos' , component: ListPromosComponent},
+      {path: 'referentiel_list' , component: ListReferentielComponent},
+      { path: 'create_promo' , component: AddPromosComponent}
     ]},
   { path: 'add_groupe_competence', component: AddGroupeCompetenceComponent},
   { path : 'add_competence', component: AddCompetenceComponent},
@@ -33,6 +39,7 @@ const routes: Routes = [
   { path: 'liste_user', component: ListeUserComponent},
   { path: 'liste_groupe_competence', component: ListeGroupeCompetenceComponent},
   { path : 'liste_competence' , component: ListeCompetenceComponent},
+  {path: 'referentiel_list' , component: ListReferentielComponent},
   // default route
   { path: '',
     redirectTo: 'login',

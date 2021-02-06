@@ -15,7 +15,7 @@
           <!-- Email -->
           <mat-form-field appearance="outline" fxLayout="column" class="mat-form-field">
             <mat-label>Username</mat-label>
-            <input matInput placeholder="Username" formControlName="username" required>
+            <input matInput placeholder="Username" formControlName="username" required />
             <mat-error *ngIf="LoginForm.controls.username.touched && LoginForm.controls.username.invalid">
               <span *ngIf="LoginForm.controls.username.errors.required">Ce champ est obligatoire.</span>
               <span *ngIf="LoginForm.controls.username.errors">Ce champ est invalide.</span>
@@ -23,7 +23,7 @@
           </mat-form-field>
           <mat-form-field appearance="outline" fxLayout="column">
             <mat-label>Password</mat-label>
-            <input matInput placeholder="Password" type="password" formControlName="password" required>
+            <input matInput placeholder="Password" type="password" formControlName="password" required />
             <mat-error *ngIf="LoginForm.controls.password.touched && LoginForm.controls.password.invalid">
               <span *ngIf="LoginForm.controls.password.errors.required">Ce champ est obligatoire.</span>
             </mat-error>

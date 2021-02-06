@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ProfileSorie} from '../add-profile-sortie/profile-sorie';
+import {Profiledesortie} from '../model-profiledesortie';
+import {ListProfiledesortieService} from '../../access_database/services/list-profiledesortie.service';
 
 @Component({
   selector: 'app-liste-profile-sortie',
@@ -8,48 +9,22 @@ import {ProfileSorie} from '../add-profile-sortie/profile-sorie';
 })
 export class ListeProfileSortieComponent implements OnInit {
 
-  constructor() { }
-  profileSortie: ProfileSorie [] = [
-    {
-      libelle : 'Développeur web',
-      archiver: false
-    },
-    {
-      libelle : 'Développeur front',
-      archiver: false
-    },
-    {
-      libelle : 'Développeur fullstack',
-      archiver: false
-    },
-    {
-      libelle : 'integrateur web',
-      archiver: false
-    },
-    {
-      libelle : 'Designer web',
-      archiver: false
-    },
-    {
-      libelle : 'Réferent digital',
-      archiver: false
-    },
-    {
-      libelle : 'Community manager',
-      archiver: false
-    },
-    {
-      libelle : 'Data scientist',
-      archiver: false
-    },
-    {
-      libelle : 'IOT',
-      archiver: false
-    }
-  ];
-
+  constructor(private listeProfiledesortie: ListProfiledesortieService) { }
+  titre = 'Liste des Profiles de Sortie';
+  profileSortie: Profiledesortie [] = [];
   displayedColumns: string[] = ['libelle', 'Action'];
   ngOnInit(): void {
+    this.getProfilesSortie();
   }
-
+  // tslint:disable-next-line:typedef
+   getProfilesSortie()
+  {
+    this.listeProfiledesortie.getProfiledesortie().subscribe(data => {
+     // console.log(data);
+      // @ts-ignore
+      this.profileSortie = data;
+      // @ts-ignore
+     // return data;
+    });
+   }
 }

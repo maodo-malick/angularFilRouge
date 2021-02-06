@@ -31,9 +31,9 @@
         <mat-icon style="color: white;" class="mat-icon3">settings</mat-icon>Paramètre</span>
       </button>
       <mat-menu #parametreMenu="matMenu">
-        <button mat-menu-item>Promos</button>
-        <button mat-menu-item>Référentiel</button>
-        <button mat-menu-item [routerLink]="['liste_groupe_competence']">Groupe de CompétenceS</button>
+        <button mat-menu-item [routerLink]="['create_promo']">Promos</button>
+        <button mat-menu-item [routerLink]="['referentiel_list']">Référentiel</button>
+        <button mat-menu-item [routerLink]="['liste_groupe_competence']">Groupe de Compétences</button>
         <button mat-menu-item [routerLink]="['add_competence']">Compétences</button>
         <button mat-menu-item>Groupe de Tags</button>
         <button mat-menu-item [routerLink]="['liste_profile_sortie']">Profile de sortie</button>
@@ -56,9 +56,21 @@
       </button>
     </div>
   </div>
-  <p-dropdown [options]="promos" [(ngModel)]="selectedPromos" optionLabel="libelle" style="margin-right: 15%;"></p-dropdown>
+   <p-dropdown [options]="promos" [(ngModel)]="selectedPromos" optionLabel="libelle" style="margin-right: 15%;"></p-dropdown>
+<!--  <mat-form-field>-->
+<!--    <mat-select *ngFor="let promo of promos"  matInput>-->
+<!--      <mat-option value="${{promo.libelle}}">{{promo.libelle}}</mat-option>-->
+<!--    </mat-select>-->
+<!--  </mat-form-field>-->
+
   <div>
-    Profile
+    <button mat-icon-button style="margin-right: 15px; margin-top: 5px" matBadge="4"  matBadgeColor="warn" matBadgePosition="above">
+      <mat-icon style="color:white">notifications_active</mat-icon>
+
+    </button>
+    <button mat-icon-button>
+    <mat-icon style="color:white">account_circle</mat-icon>
+    </button>
   </div>
 </div>
 
